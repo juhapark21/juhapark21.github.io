@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Juha Park</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -22,8 +32,16 @@
                 <a href="blog.html">blog</a>
                 <a href="contact.html">contact</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-                    <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.333 0-5.667-2.334T4.058 12q0-2.47 1.413-4.535q1.414-2.067 4.01-2.973q.306-.107.536-.056t.381.199t.192.38q.04.233-.063.489q-.194.477-.282.971T10.158 7.5q0 2.673 1.863 4.537q1.864 1.863 4.537 1.863q.698 0 1.277-.148q.58-.148.988-.24q.218-.04.399.01t.292.176q.115.125.156.308t-.047.417q-.715 2.45-2.803 4.013T12.058 20"/></svg>
-                    <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q-2.075 0-3.537-1.463T7 12q0-2.075 1.463-3.537T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17M2 13q-.425 0-.712-.288T1 12q0-.425.288-.712T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13zm18 0q-.425 0-.712-.288T19 12q0-.425.288-.712T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13zm-8-8q-.425 0-.712-.288T11 4V2q0-.425.288-.712T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5m0 18q-.425 0-.712-.288T11 22v-2q0-.425.288-.712T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23M5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05M18 19.425l-1.05-1.075q-.275-.3-.275-.712t.275-.688q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275M4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.713-.275t.687.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288"/></svg>
+                    <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12.058 20q-3.333 0-5.667-2.334T4.058 12q0-2.47 1.413-4.535q1.414-2.067 4.01-2.973q.306-.107.536-.056t.381.199t.192.38q.04.233-.063.489q-.194.477-.282.971T10.158 7.5q0 2.673 1.863 4.537q1.864 1.863 4.537 1.863q.698 0 1.277-.148q.58-.148.988-.24q.218-.04.399.01t.292.176q.115.125.156.308t-.047.417q-.715 2.45-2.803 4.013T12.058 20" />
+                    </svg>
+                    <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M12 17q-2.075 0-3.537-1.463T7 12q0-2.075 1.463-3.537T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17M2 13q-.425 0-.712-.288T1 12q0-.425.288-.712T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13zm18 0q-.425 0-.712-.288T19 12q0-.425.288-.712T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13zm-8-8q-.425 0-.712-.288T11 4V2q0-.425.288-.712T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5m0 18q-.425 0-.712-.288T11 22v-2q0-.425.288-.712T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23M5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05M18 19.425l-1.05-1.075q-.275-.3-.275-.712t.275-.688q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275M4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.713-.275t.687.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288" />
+                    </svg>
                 </button>
             </nav>
         </header>
@@ -31,13 +49,66 @@
         <main>
             <h2 class="page-title">Projects</h2>
             <div class="projects-list">
-                <h3>Ham Radio Logger</h3>
-                <p>Logs contacts and exports to ADIF format. Lightweight and offline.</p>
-                
+                <div class="current-projects">
+                    <h3>Current Projects</h3>
+                    <a href="https://github.com" target="_blank">CW Capacitive Touch Key</a>
+                    <p>Will hopefully be a cheap way to try out some different key styles (straight, iambic paddle,
+                        bugs, cooties, etc).</p>
+                    <br>
+
+                    <a href="https://github.com" target="_blank">This website</a>
+                    <p>Always a work in progress!</p>
+                    <br>
+
+                </div>
+                <div class="completed-projects">
+                    <h3>Completed Projects</h3>
+
+                    <a href="https://www.congressionalappchallenge.us/22-CA14/" target="_blank">Utrition</a>
+                    <sup class="footnote-link"><a id="ref-footnote-1" href="#footnote-1">[1]</a></sup>
+
+                    <p>App that scans food labels and makes them simpler. Also customizes % daily values!</p>
+                    <br>
+
+                    <a href="https://github.com/juhapark21/StardewValleyMods/tree/main/%5BCP%5D%20GiftTastesMakeSense"
+                        target="_blank">Gift Tastes Make (More) Sense</a>
+                    <p>Stardew Valley mod that adjusts some villager gift preferences to better match in-game context
+                    </p>
+                    <br>
+
+                    <a href="https://github.com/juhapark21/WWDC22-DefaultAppsARGlasses" target="_blank">Default Apps
+                        with AR Glasses</a>
+                    <sup class="footnote-link"><a id="ref-footnote-2" href="#footnote-2">[2]</a></sup>
+                    <p>Imagined how default apps can be augmented in AR</p>
+                    <br>
+
+                    <a href="https://github.com/juhapark21/TextToMorseCode" target="_blank">TextToMorseCode</a>
+                    <p>Simple python program to convert text into CW with configurable speed, sidetone, and Farnsworth
+                        timing</p>
+                    <br>
+
+                    <a href="https://github.com/juhapark21/Clinometer" target="_blank">Clinometer</a>
+                    <p>Simple inclinometer app created for school use</p>
+                    <br>
+
+                    <a href="" target="_blank"></a>
+                    <p></p>
+                    <br>
+
+                </div>
             </div>
+            <footer class="footer">
+                <p id="footnote-1">
+                    [1] Congressional App Challenge Winner (2022, District CA-14) <a href="#ref-footnote-1">&#8617;</a>
+                </p>
+                <p id="footnote-2">
+                    [2] Swift Student Challenge Winner (2022) <a href="#ref-footnote-2">&#8617;</a>
+                </p>
+            </footer>
         </main>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

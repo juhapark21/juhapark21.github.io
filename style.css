@@ -5,6 +5,16 @@
     box-sizing: border-box;
 }
 
+/* Smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* Highlight target when anchor link clicked */
+/* Only for links going down to the footnote, though (not the other way around) */
+/* Links going down to the footnote always start with "footnote" */
+[id^="footnote"]:target {
+   background-color: #ffa;
+}
+
 /* Color Variables */
 :root {
     --bg-primary: #FFF9F4;
@@ -323,6 +333,10 @@ button.active, .btn.active {
     object-fit: scale-down;
 }
 
+.projects-list a {
+    font-size: 1.1rem;
+}
+
 .project-placeholder {
     color: var(--text-secondary);
     font-size: 3em;
@@ -553,4 +567,19 @@ input[type="submit"]:hover {
     .page-title {
         font-size: 2em;
     }
+}
+
+/* Ensure no margin or padding on sup and a */
+sup {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    vertical-align: super; /* Align sup text properly */
+}
+
+.footnote-link a {
+    font-size: small; /* Adjust text size */
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline; /* Aligns footnote link with text */
 }
