@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script>
+        // Apply theme immediately to prevent flash
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            // Mark theme as ready
+            document.documentElement.setAttribute('data-theme-ready', 'true');
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Prevent flash by hiding content until theme is ready */
+        html:not([data-theme-ready]) body {
+            visibility: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            padding: 0;
+        }
+
+        .form-container h3 {
+            font-size: 1.3em;
+            font-weight: normal;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h3>Or send me a message:</h3>
+
+        <!-- 
+        To use this form:
+        1. Sign up at https://formspree.io
+        2. Create a new form
+        3. Replace YOUR_FORM_ID below with the ID they give you
+        -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <!-- Formspree's honeypot spam protection -->
+            <input type="text" name="_gotcha" style="display:none">
+
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <script>
+        // Listen for theme changes from parent FIRST
+        window.addEventListener('message', function (e) {
+            if (e.data.type === 'themeChange') {
+                if (e.data.theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                // Update height after theme change in case it affects layout
+                setTimeout(updateHeight, 100);
+            }
+        });
+
+        // Send height to parent window whenever content changes
+        function updateHeight() {
+            const height = document.body.scrollHeight;
+            window.parent.postMessage({ type: 'resize', height: height }, '*');
+        }
+
+        // Update height on load and whenever form elements change
+        window.addEventListener('load', updateHeight);
+        window.addEventListener('resize', updateHeight);
+
+        // Watch for form changes that might affect height
+        window.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('input', updateHeight);
+            }
+            updateHeight();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Juha Park</title>
+    <link>https://yourdomain.com</link>
+    <description>I make stuff, sometimes</description>
+    <language>en-us</language>
+    <atom:link href="https://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <!-- ITEM TEMPLATE - Copy this for each new blog post -->
+    <!-- 
+    <item>
+      <title>Your Post Title</title>
+      <link>https://yourdomain.com/blog/post-slug.html</link>
+      <guid>https://yourdomain.com/blog/post-slug.html</guid>
+      <pubDate>Day, DD Mon YYYY HH:MM:SS +0000</pubDate>
+      <description><![CDATA[
+        Your post excerpt or first paragraph goes here.
+      ]]></description>
+    </item>
+    -->
+    
+    <item>
+      <title>Building a Ham Radio Logger from Scratch</title>
+      <link>https://yourdomain.com/blog/ham-radio-logger.html</link>
+      <guid>https://yourdomain.com/blog/ham-radio-logger.html</guid>
+      <pubDate>Sun, 10 Nov 2025 12:00:00 +0000</pubDate>
+      <description><![CDATA[
+        I've been wanting to digitize my radio contacts for a while now, and I finally sat down to build a proper logging application. Most of the existing solutions felt too bloated for my needs, so I decided to roll my own using Python and a simple SQLite database.
+      ]]></description>
+    </item>
+
+    <item>
+      <title>Thoughts on Minimalist Web Design</title>
+      <link>https://yourdomain.com/blog/minimalist-design.html</link>
+      <guid>https://yourdomain.com/blog/minimalist-design.html</guid>
+      <pubDate>Mon, 28 Oct 2025 12:00:00 +0000</pubDate>
+      <description><![CDATA[
+        The modern web is cluttered. Every site wants your attention, your email, your click. I've been thinking a lot about what makes a good personal website, and I keep coming back to simplicity. Not because minimalism is trendy, but because it respects the reader.
+      ]]></description>
+    </item>
+
+    <item>
+      <title>Local Bird Spotting Guide</title>
+      <link>https://yourdomain.com/blog/bird-spotting.html</link>
+      <guid>https://yourdomain.com/blog/bird-spotting.html</guid>
+      <pubDate>Tue, 15 Oct 2025 12:00:00 +0000</pubDate>
+      <description><![CDATA[
+        Massachusetts has some incredible bird diversity, especially during migration seasons. Over the past year, I've been documenting the species I've spotted around my area. Here's what I've learned about the best times and places to see different birds.
+      ]]></description>
+    </item>
+
+    <item>
+      <title>My First Tech Theatre Production</title>
+      <link>https://yourdomain.com/blog/tech-theatre.html</link>
+      <guid>https://yourdomain.com/blog/tech-theatre.html</guid>
+      <pubDate>Sun, 30 Sep 2025 12:00:00 +0000</pubDate>
+      <description><![CDATA[
+        I just wrapped up my first show as a lighting tech, and wow, it was intense. Going from writing code to programming light cues felt surprisingly similar in some ways, but wildly different in others. Here's what I learned about working under pressure.
+      ]]></description>
+    </item>
+
+    <item>
+      <title>Why I Run a .onion Site</title>
+      <link>https://yourdomain.com/blog/onion-site.html</link>
+      <guid>https://yourdomain.com/blog/onion-site.html</guid>
+      <pubDate>Thu, 12 Sep 2025 12:00:00 +0000</pubDate>
+      <description><![CDATA[
+        Privacy on the internet feels increasingly rare. I've always been interested in anonymity technologies, not because I have anything to hide, but because I believe privacy is a fundamental right. That's why I decided to mirror this site on Tor.
+      ]]></description>
+    </item>
+
+  </channel>
+</rss>

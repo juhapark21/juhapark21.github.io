@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Juha Park</title>
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container narrow">
+        <header>
+            <div class="header-left">
+                <h1><a href="index.html">Juha Park</a></h1>
+                <div class="tagline">I make stuff, sometimes</div>
+            </div>
+            <nav>
+                <a href="index.html">about</a>
+                <a href="projects.html">projects</a>
+                <a href="blog.html" class="active">blog</a>
+                <a href="contact.html">contact</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12.058 20q-3.333 0-5.667-2.334T4.058 12q0-2.47 1.413-4.535q1.414-2.067 4.01-2.973q.306-.107.536-.056t.381.199t.192.38q.04.233-.063.489q-.194.477-.282.971T10.158 7.5q0 2.673 1.863 4.537q1.864 1.863 4.537 1.863q.698 0 1.277-.148q.58-.148.988-.24q.218-.04.399.01t.292.176q.115.125.156.308t-.047.417q-.715 2.45-2.803 4.013T12.058 20"/></svg>
+                    <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17q-2.075 0-3.537-1.463T7 12q0-2.075 1.463-3.537T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17M2 13q-.425 0-.712-.288T1 12q0-.425.288-.712T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13zm18 0q-.425 0-.712-.288T19 12q0-.425.288-.712T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13zm-8-8q-.425 0-.712-.288T11 4V2q0-.425.288-.712T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5m0 18q-.425 0-.712-.288T11 22v-2q0-.425.288-.712T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23M5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05M18 19.425l-1.05-1.075q-.275-.3-.275-.712t.275-.688q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275M4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.713-.275t.687.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288"/></svg>
+                </button>
+            </nav>
+        </header>
+
+        <main>
+            <h2 class="page-title">Blog</h2>
+            <a href="feed.xml" class="rss-link">RSS feed →</a>
+
+            <div class="blog-list">
+                <article class="blog-preview">
+                    <a href="blog/ham-radio-logger.html">
+                        <div class="blog-meta">November 10, 2025</div>
+                        <h3 class="blog-title">Building a Ham Radio Logger from Scratch</h3>
+                        <p class="blog-excerpt">
+                            I've been wanting to digitize my radio contacts for a while now, and I finally sat down to build a proper logging application. Most of the existing solutions felt too bloated for my needs, so I decided to roll my own using Python and a simple SQLite database...
+                        </p>
+                        <span class="read-more">Read more →</span>
+                    </a>
+                </article>
+
+                <article class="blog-preview">
+                    <a href="blog/minimalist-design.html">
+                        <div class="blog-meta">October 28, 2025</div>
+                        <h3 class="blog-title">Thoughts on Minimalist Web Design</h3>
+                        <p class="blog-excerpt">
+                            The modern web is cluttered. Every site wants your attention, your email, your click. I've been thinking a lot about what makes a good personal website, and I keep coming back to simplicity. Not because minimalism is trendy, but because it respects the reader...
+                        </p>
+                        <span class="read-more">Read more →</span>
+                    </a>
+                </article>
+
+                <article class="blog-preview">
+                    <a href="blog/bird-spotting.html">
+                        <div class="blog-meta">October 15, 2025</div>
+                        <h3 class="blog-title">Local Bird Spotting Guide</h3>
+                        <p class="blog-excerpt">
+                            Massachusetts has some incredible bird diversity, especially during migration seasons. Over the past year, I've been documenting the species I've spotted around my area. Here's what I've learned about the best times and places to see different birds...
+                        </p>
+                        <span class="read-more">Read more →</span>
+                    </a>
+                </article>
+
+                <article class="blog-preview">
+                    <a href="blog/tech-theatre.html">
+                        <div class="blog-meta">September 30, 2025</div>
+                        <h3 class="blog-title">My First Tech Theatre Production</h3>
+                        <p class="blog-excerpt">
+                            I just wrapped up my first show as a lighting tech, and wow, it was intense. Going from writing code to programming light cues felt surprisingly similar in some ways, but wildly different in others. Here's what I learned about working under pressure...
+                        </p>
+                        <span class="read-more">Read more →</span>
+                    </a>
+                </article>
+
+                <article class="blog-preview">
+                    <a href="blog/onion-site.html">
+                        <div class="blog-meta">September 12, 2025</div>
+                        <h3 class="blog-title">Why I Run a .onion Site</h3>
+                        <p class="blog-excerpt">
+                            Privacy on the internet feels increasingly rare. I've always been interested in anonymity technologies, not because I have anything to hide, but because I believe privacy is a fundamental right. That's why I decided to mirror this site on Tor...
+                        </p>
+                        <span class="read-more">Read more →</span>
+                    </a>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
