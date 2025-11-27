@@ -583,3 +583,7 @@ sup {
     padding: 0;
     vertical-align: baseline; /* Aligns footnote link with text */
 }
+
+.email [class^='ay3'] {
+  display: none;
+}
