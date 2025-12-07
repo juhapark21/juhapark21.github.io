@@ -21,12 +21,12 @@
     -->
     
     <item>
-      <title>Building a Ham Radio Logger from Scratch</title>
-      <link>https://yourdomain.com/blog/ham-radio-logger.html</link>
-      <guid>https://yourdomain.com/blog/ham-radio-logger.html</guid>
-      <pubDate>Sun, 10 Nov 2025 12:00:00 +0000</pubDate>
+      <title>First POTA Attempt</title>
+      <link>https://yourdomain.com/blog/2025-08-09-first-pota.html</link>
+      <guid>https://yourdomain.com/blog/2025-08-09-first-pota.html</guid>
+      <pubDate>Sat, 9 Aug 2025 12:00:00 +0000</pubDate>
       <description><![CDATA[
-        I've been wanting to digitize my radio contacts for a while now, and I finally sat down to build a proper logging application. Most of the existing solutions felt too bloated for my needs, so I decided to roll my own using Python and a simple SQLite database.
+        In the past couple of months, a not-insignificant number of people have recommended that I try out POTA as a “youngster"...
       ]]></description>
     </item>
 
