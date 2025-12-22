@@ -1,5 +1,5 @@
 // Theme persistence and toggle
-// This runs immediately to prevent flash
+// Run immediately to prevent flash
 (function() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -100,3 +100,28 @@ if (document.querySelector('.tag-filter-container')) {
     window.filterByTag = filterByTag;
     window.toggleTagDropdown = toggleTagDropdown;
 }
+
+// Retrigger sidenote highlight animation on repeated clicks
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('sidenote-ref')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Save current scroll position
+            const scrollPos = window.scrollY;
+            
+            // Remove and re-add the hash to retrigger :target
+            window.location.hash = '';
+            
+            // Restore scroll position immediately
+            window.scrollTo(0, scrollPos);
+            
+            // Re-add hash after brief delay
+            setTimeout(function() {
+                window.location.hash = targetId;
+            }, 10);
+        }
+    }
+});
