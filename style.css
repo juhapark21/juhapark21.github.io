@@ -12,14 +12,18 @@ html { scroll-behavior: smooth; }
 /* Only for links going down to the footnote, though (not the other way around) */
 /* Links going down to the footnote always start with "footnote" */
 [id^="footnote"]:target {
-   background-color: #ffa;
+    background-color: rgba(206, 121, 107, 0.3);
+}
+
+[data-theme="dark"] [id^="footnote"]:target {
+    background-color: rgba(255, 255, 170, 0.3); /* yellow */
 }
 
 /* Color Variables */
 :root {
-    --bg-primary: #FFF9F4;
-    --bg-secondary: #F9EFE9;
-    --text-primary: #4a3f35;
+    --bg-primary: #ECEBE4;
+    --bg-secondary: #ECEBE4;
+    --text-primary: #494331;
     --text-secondary: #7a6f65;
     --accent: #576490;
     --accent-hover: #6b7aa8;
@@ -30,19 +34,47 @@ html { scroll-behavior: smooth; }
     --bg-primary: #1a1614;
     --bg-secondary: #242220;
     --text-primary: #e8e0d8;
-    --text-secondary: #a89f95;
+    --text-secondary: #aeaeae;
     --accent: #7b8bb8;
-    --accent-hover: #8f9fc6;
+    --accent-hover: #bcc0c8;
+    --border: #3a3634;
+}
+
+/* Color Variables */
+:root {
+    --bg-primary: #f4f3ec;
+    --bg-secondary: #ECEBE4;
+    --text-primary: #494331;
+    --text-secondary: #7a6f65;
+    --accent: #576490;
+    --accent-hover: #6b7aa8;
+    --border: #e8ded8;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1614;
+    --bg-secondary: #242220;
+    --text-primary: #e8e0d8;
+    --text-secondary: #aeaeae;
+    --accent: #7b8bb8;
+    --accent-hover: #bcc0c8;
     --border: #3a3634;
 }
 
 /* Base Styles */
 body {
-    font-family: 'Courier New', monospace;
+    font-family: "IBM Plex Mono", "Inconsolata", "Courier New", monospace;
+    /*font-family: 'Courier New', monospace;*/
     line-height: 1.6;
     color: var(--text-primary);
     background: var(--bg-primary);
     transition: background 0.3s, color 0.3s;
+}
+
+/* Disable italics for IBM Plex Mono because I don't like the italics font */
+em {
+    font-style: normal;
+    color: var(--accent);
 }
 
 a {
@@ -470,7 +502,7 @@ button.active, .btn.active {
 }
 
 .blog-excerpt {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.7;
     margin-bottom: 15px;
 }
@@ -587,3 +619,75 @@ sup {
 .email [class^='ay3'] {
   display: none;
 }
+
+/* Sidenotes */
+
+.sidenote-ref {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.8em;
+    vertical-align: super;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.sidenote-ref:hover {
+    color: var(--accent-hover);
+}
+
+.sidenote {
+    float: right;
+    clear: right;
+    margin-right: -220px;
+    width: 200px;
+    font-size: 0.85em;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    padding-left: 15px;
+    border-left: 2px solid var(--border);
+    transition: background-color 0.3s;
+    scroll-margin-top: 200px;
+}
+
+.sidenote:target {
+    background-color: rgba(206, 121, 107, 0.3);
+    padding: 5px;
+    margin-left: -5px;
+    animation: highlight-fade 2s forwards;
+}
+
+[data-theme="dark"] .sidenote:target {
+    animation: highlight-fade-dark 2s forwards;
+}
+
+@keyframes highlight-fade {
+    0% { background-color: rgba(206, 121, 107, 0.3); }
+    70% { background-color: rgba(206, 121, 107, 0.3); }
+    100% { background-color: transparent; }
+}
+
+@keyframes highlight-fade-dark {
+    0% { background-color: rgba(255, 255, 170, 0.3); }
+    70% { background-color: rgba(255, 255, 170, 0.3); }
+    100% { background-color: transparent; }
+}
+
+@media (max-width: 1200px) {
+    .sidenote {
+        display: block;
+        float: none;
+        margin: 15px 0;
+        margin-right: 0;
+        width: 100%;
+        padding: 10px 15px;
+        border-left: 3px solid var(--accent);
+        background: var(--bg-secondary);
+    }
+}
+
+.post-content {
+    position: relative;
+}
+
+
+
