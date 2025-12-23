@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First POTA Attempt - Juha Park</title>
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Blog post specific styles */
+        .post-header {
+            margin-bottom: 50px;
+        }
+
+        .post-meta {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .post-title {
+            font-size: 2.5em;
+            font-weight: normal;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .post-content {
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .post-content h2,
+        .post-content h3 {
+            font-weight: normal;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .post-content h2 {
+            font-size: 1.8em;
+        }
+
+        .post-content h3 {
+            font-size: 1.4em;
+        }
+
+        .post-content code {
+            background: var(--bg-secondary);
+            padding: 2px 6px;
+            border: 1px solid var(--border);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .post-content pre {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 20px;
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+
+        .post-content pre code {
+            background: none;
+            padding: 0;
+            border: none;
+        }
+
+        .post-content ul,
+        .post-content ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+
+        .post-content li {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .post-content a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .post-content a:hover {
+            color: var(--accent-hover);
+            border-bottom-color: var(--accent-hover);
+        }
+
+        .post-footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border);
+        }
+
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.95em;
+        }
+
+        .back-link:hover {
+            color: var(--accent-hover);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container narrow">
+        <header>
+            <a href="#main-content" class="skip-link">Skip to main content</a>
+            <div class="header-left">
+                <h1><a href="../index.html">Juha Park</a></h1>
+                <div class="tagline">I make stuff, sometimes</div>
+            </div>
+            <nav>
+                <a href="../index.html">about</a>
+                <a href="../projects.html">projects</a>
+                <a href="../blog.html" class="active">blog</a>
+                <a href="../contact.html">contact</a>
+                <div class="theme-controls">
+                    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"
+                        title="Dark/light theme">
+                        <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12.058 20q-3.333 0-5.667-2.334T4.058 12q0-2.47 1.413-4.535q1.414-2.067 4.01-2.973q.306-.107.536-.056t.381.199t.192.38q.04.233-.063.489q-.194.477-.282.971T10.158 7.5q0 2.673 1.863 4.537q1.864 1.863 4.537 1.863q.698 0 1.277-.148q.58-.148.988-.24q.218-.04.399.01t.292.176q.115.125.156.308t-.047.417q-.715 2.45-2.803 4.013T12.058 20" />
+                        </svg>
+                        <svg class="light-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 17q-2.075 0-3.537-1.463T7 12q0-2.075 1.463-3.537T12 7q2.075 0 3.538 1.463T17 12q0 2.075-1.463 3.538T12 17M2 13q-.425 0-.712-.288T1 12q0-.425.288-.712T2 11h2q.425 0 .713.288T5 12q0 .425-.288.713T4 13zm18 0q-.425 0-.712-.288T19 12q0-.425.288-.712T20 11h2q.425 0 .713.288T23 12q0 .425-.288.713T22 13zm-8-8q-.425 0-.712-.288T11 4V2q0-.425.288-.712T12 1q.425 0 .713.288T13 2v2q0 .425-.288.713T12 5m0 18q-.425 0-.712-.288T11 22v-2q0-.425.288-.712T12 19q.425 0 .713.288T13 20v2q0 .425-.288.713T12 23M5.65 7.05L4.575 6q-.3-.275-.288-.7t.288-.725q.3-.3.725-.3t.7.3L7.05 5.65q.275.3.275.7t-.275.7q-.275.3-.687.288T5.65 7.05M18 19.425l-1.05-1.075q-.275-.3-.275-.712t.275-.688q.275-.3.688-.287t.712.287L19.425 18q.3.275.288.7t-.288.725q-.3.3-.725.3t-.7-.3M16.95 7.05q-.3-.275-.288-.687t.288-.713L18 4.575q.275-.3.7-.288t.725.288q.3.3.3.725t-.3.7L18.35 7.05q-.3.275-.7.275t-.7-.275M4.575 19.425q-.3-.3-.3-.725t.3-.7l1.075-1.05q.3-.275.713-.275t.687.275q.3.275.288.688t-.288.712L6 19.425q-.275.3-.7.288t-.725-.288" />
+                        </svg>
+                    </button>
+                    <button class="contrast-toggle" onclick="toggleContrast()" aria-label="Toggle high contrast"
+                        title="High contrast mode">
+                        <svg class="contrast-icon" width="20" height="20" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+                            <path d="M 12 2 A 10 10 0 0 1 12 22 Z" fill="currentColor" />
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <article id="main-content">
+                <div class="post-header">
+                    <div class="post-meta">August 9, 2025</div>
+                    <h1 class="post-title">First POTA Attempt</h1>
+                </div>
+
+                <div class="post-content">
+                    <p>In the past couple of months, a not-insignificant number of people have recommended that I try
+                        out POTA as a “youngster&quot;. </p>
+                    <h2 id="what-even-is-pota-">What even is POTA?</h3>
+                        <blockquote>
+                            <p>"Parks on the Air (POTA) is an international radiosport award program that
+                                encourages
+                                licensed amateur radio operators to visit, enjoy and operate portable equipment in a
+                                variety
+                                of parks and public lands, always respecting other park users and local regulations."<a href="#sn-1" class="sidenote-ref">1</a><span class="sidenote" id="sn-1">Quick blurb from Wikipedia</span>
+                            </p>
+                        </blockquote>
+                        <p>That sounds fun! I had an upcoming trip to Yosemite, and I just got a HF radio, so I wanted
+                            to
+                            try it out. </p>
+                        <p>I would have practiced by hunting before, but I was leaving for the trip 2 days after I got
+                            the
+                            QMX. It’s okay though, I’ll figure it out as I go! </p>
+                        <h2
+                            id="turns-out-operating-from-inside-a-giant-natural-well-doesn-t-lead-to-very-good-reception">
+                            Turns out operating from inside a giant natural well doesn’t lead to very good reception
+                        </h2>
+                        <p>We were going to Tenaya Lake on Monday, so I figured I might as well attempt my first
+                            operation
+                            there. Most places in Yosemite that are not the valley seemed to be pretty high up, so I
+                            thought
+                            it would work out. What I forgot: </p>
+                        <ul>
+                            <li>There are lots of trees everywhere, and while it’s good for throwing up EFHW antennas,
+                                it
+                                was less good in terms of interference.</li>
+                            <li>It’s a lake. For water to pool in a lake, the surrounding land has to be higher up. I
+                                just
+                                tried to operate in a giant basin. </li>
+                            <li>The pine trees have pretty flimsy branches, and it’s not the best for throwing up
+                                antennas?
+                                I didn’t have much of a choice though (only antenna I have is an EFHW). </li>
+                        </ul>
+                        <h2 id="second-try">Second try</h2>
+                        <p>Glacier Point was higher up and seemed much more promising, so I tried once again the day
+                            after.
+                        </p>
+                        <h2 id="would-you-like-to-learn-about-the-wonderful-art-of-amateur-radio">Would you like to
+                            learn
+                            about the wonderful art of amateur radio</h2>
+                        <p>I set up just a few yards off from the back parking lot of Glacier Point. The setup got the
+                            attention of a few curious tourists and one tour guide who was <em>very</em> excited to see
+                            something new happening in the park. I got to explain what amateur radio was to people and
+                            introduce it to them! </p>
+                        <h2 id="-can-people-hear-me-">…Can people hear me?</h2>
+                        <p>I was operating with a QMX, a QRPGuys EFHW antenna, and a CWMorse straight key. I could hear
+                            people anywhere from Washington to Illinois, but when I picked an empty frequency to send
+                            out
+                            calls, I wasn’t sure if anyone could spot me, or if I’d even been picked up by the RBN. I
+                            was
+                            eventually spotted, but after a handful of botched contacts where neither of us were able to
+                            receive properly, I decided to switch to P2P.</p>
+                        <p>P2P was the right choice. Even though I was operating with ~4 watts, I was able to be heard
+                            and
+                            given priority since P2P contacts are worth more in POTA. It was also easier for me in the
+                            same
+                            way hunting is easier for beginners — I was able to listen to the activator’s QSOs over and
+                            over
+                            again to ensure I had their info, so that when I did make a contact with them, I only had to
+                            really worry about sending my info correctly and completing the exchange. </p>
+                        <h2 id="oh-no-i-can-only-hear-5nn-bk">Oh no I can only hear 5NN BK</h2>
+                        <p>Uhhhhh 5NN CA CA TU 73 dit dit.<a href="#sn-2" class="sidenote-ref">2</a><span class="sidenote" id="sn-2">**I promise I didn’t respond to actual signal reports like this</span></p>
+                        <p>Before this first attempt, I practiced with Morse Walker and Morse Ninja audio files to get
+                            up to
+                            at least 15wpm. And I did! For standard exchanges. </p>
+                        <p>Since standard exchanges were the only things I really trained to get up to speed, I could
+                            receive entire chunks of exchanges but went back down to ~10wpm max for <em>anything</em>
+                            outside of the standard phrases... including callsigns...</p>
+                        <p>Yeah, it was not the most fun time for receiving spotty CW. </p>
+                        <p>In conclusion, I am very sorry to whoever stumbled across a bumbling new ham on 20m on August
+                            5th. </p>
+                        <h2 id="yay-contacts-">Yay!! Contacts!!</h2>
+                        <p>The receiving struggles didn’t lead to as many busted calls as you might expect, though! I
+                            mostly
+                            listened in on activators until I got their callsign and state down, so as long as they got
+                            my
+                            callsign (which they did if they responded to me), we had all the info needed to confirm a
+                            contact :) </p>
+                        <p>I made 5 P2P contacts total, although only 3 of them got logged (presumably because I wasn’t
+                            in
+                            the other person’s logs). That meant I failed at activating the park, but it was a fun
+                            couple of
+                            hours regardless! </p>
+                        <p>Once college applications are over, I’m going to go to some California state parks to try
+                            activation again. Maybe Mt. Diablo? </p>
+                </div>
+
+                <div class="post-footer">
+                    <a href="../blog.html" class="back-link">← Back to all posts</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="../script.js"></script>
+    <script data-goatcounter="https://juhapark21.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>

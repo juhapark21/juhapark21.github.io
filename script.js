@@ -157,3 +157,26 @@ document.addEventListener('click', function (e) {
         }
     }
 });
+
+// Accessibility 
+// High contrast toggle
+function toggleContrast() {
+    const html = document.documentElement;
+    const currentContrast = html.getAttribute('data-contrast');
+    
+    if (currentContrast === 'high') {
+        html.removeAttribute('data-contrast');
+        localStorage.setItem('contrast', 'normal');
+    } else {
+        html.setAttribute('data-contrast', 'high');
+        localStorage.setItem('contrast', 'high');
+    }
+}
+
+// Initialize contrast on load
+(function() {
+    const savedContrast = localStorage.getItem('contrast');
+    if (savedContrast === 'high') {
+        document.documentElement.setAttribute('data-contrast', 'high');
+    }
+})();

@@ -79,7 +79,7 @@ body {
 }
 
 /* Disable italics for IBM Plex Mono because I don't like how it looks */
-/* The italics are from another font for now... shhhhh... */ 
+/* The italics are from another font for now... shhhhh... */
 em {
     font-family: "Inconsolata", "Courier New", monospace;
     font-style: italic;
@@ -489,7 +489,7 @@ sup {
 
 .sidenote:target {
     background-color: rgba(206, 121, 107, 0.3);
-    border-left-color: var(--text-secondary);  
+    border-left-color: var(--text-secondary);
     animation: highlight-fade 2s forwards;
 }
 
@@ -500,34 +500,34 @@ sup {
 @keyframes highlight-fade {
     0% {
         background-color: rgba(206, 121, 107, 0.3);
-        border-left-color: var(--text-secondary);  
+        border-left-color: var(--text-secondary);
     }
 
     70% {
         background-color: rgba(206, 121, 107, 0.3);
-        border-left-color: var(--text-secondary);  
+        border-left-color: var(--text-secondary);
     }
 
     100% {
         background-color: transparent;
-        border-left-color: var(--border);  
+        border-left-color: var(--border);
     }
 }
 
 @keyframes highlight-fade-dark {
     0% {
         background-color: rgba(255, 255, 170, 0.3);
-        border-left-color: var(--text-secondary);  
+        border-left-color: var(--text-secondary);
     }
 
     70% {
         background-color: rgba(255, 255, 170, 0.3);
-        border-left-color: var(--text-secondary);  
+        border-left-color: var(--text-secondary);
     }
 
     100% {
         background-color: transparent;
-        border-left-color: var(--border);  
+        border-left-color: var(--border);
     }
 }
 
@@ -546,4 +546,117 @@ sup {
 
 .post-content {
     position: relative;
+}
+
+.theme-controls {
+    display: flex;
+    gap: 24px;
+}
+
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+a:focus,
+button:focus,
+.theme-toggle:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* High contrast mode  */
+[data-contrast="high"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f0f0;
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --accent: #0000ee;  /* Classic blue link */
+    --accent-hover: #551a8b;  /* Visited purple */
+    --border: #000000;
+}
+
+[data-contrast="high"][data-theme="dark"] {
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
+    --accent: #00ffff;  /* Bright cyan */
+    --accent-hover: #ffff00;  /* Yellow */
+    --border: #ffffff;
+}
+
+.contrast-toggle {
+    background: none; 
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+    padding: 8px;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9em;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+}
+
+.contrast-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.contrast-icon {
+    width: 20px; 
+    height: 20px; 
+}
+
+[data-contrast="high"] .contrast-toggle {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    border-color: var(--text-primary);
+}
+
+/* Auto-detect system preference */
+@media (prefers-contrast: high) {
+    :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f0f0f0;
+        --text-primary: #000000;
+        --text-secondary: #000000;
+        --accent: #0000ee;
+        --accent-hover: #551a8b;
+        --border: #000000;
+    }
+    
+    [data-theme="dark"] {
+        --bg-primary: #000000;
+        --bg-secondary: #1a1a1a;
+        --text-primary: #ffffff;
+        --text-secondary: #ffffff;
+        --accent: #00ffff;
+        --accent-hover: #ffff00;
+        --border: #ffffff;
+    }
 }
