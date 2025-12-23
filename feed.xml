@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Juha Park</title>
-    <link>https://juhapark21.com</link>
+    <link>https://juhapark21.github.io/link>
     <description>I make stuff, sometimes</description>
     <language>en-us</language>
     <atom:link href="https://juhapark21.com/feed.xml" rel="self" type="application/rss+xml" />
@@ -11,8 +11,8 @@
     <!-- 
     <item>
       <title>POST TITLE</title>
-      <link>https://juhapark21.com/blog/post-slug.html</link>
-      <guid>https://juhapark21.com/blog/post-slug.html</guid>
+      <link>https://juhapark21.github.io/blog/post-slug.html</link>
+      <guid>https://juhapark21.github.io/blog/post-slug.html</guid>
       <pubDate>Day, DD Mon YYYY HH:MM:SS +0000</pubDate>
       <description><![CDATA[
         Post excerpt or first paragraph 
@@ -22,8 +22,8 @@
     
     <item>
       <title>First POTA Attempt</title>
-      <link>https://juhapark21.com/blog/2025-08-09-first-pota.html</link>
-      <guid>https://juhapark21.com/blog/2025-08-09-first-pota.html</guid>
+      <link>https://juhapark21.github.io/blog/2025-08-09-first-pota.html</link>
+      <guid>https://juhapark21.github.io/blog/2025-08-09-first-pota.html</guid>
       <pubDate>Sat, 9 Aug 2025 12:00:00 +0000</pubDate>
       <description><![CDATA[
         In the past couple of months, a not-insignificant number of people have recommended that I try out POTA as a “youngster"...
@@ -32,8 +32,8 @@
 
     <item>
       <title>Tips for the Swift Student Challenge</title>
-      <link>https://juhapark21.com/blog/2025-07-22-ssc-tips.html</link>
-      <guid>https://juhapark21.com/blog/2025-07-22-ssc-tips.html</guid>
+      <link>https://juhapark21.github.io/blog/2025-07-22-ssc-tips.html</link>
+      <guid>https://juhapark21.github.io/blog/2025-07-22-ssc-tips.html</guid>
       <pubDate>Tue, 22 Jul 2025 12:00:00 +0000</pubDate>
       <description><![CDATA[
         Someone messaged me recently asking how my experience applying to SSC was, and I figured that other people might also get some use out of the list of tips I made...
