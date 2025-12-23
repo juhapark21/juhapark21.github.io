@@ -78,9 +78,6 @@ document.addEventListener('click', function (e) {
                 });
             }, 10);
 
-            // Remove highlight 
-            //history.pushState("", document.title, window.location.pathname + window.location.search);
-
             // Remove saved position 
             sessionStorage.removeItem('footnote-return-position')
         }
