@@ -11,6 +11,10 @@
             if (savedTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
             }
+            const savedContrast = localStorage.getItem('contrast');
+            if (savedContrast === 'high') {
+                document.documentElement.setAttribute('data-contrast', 'high');
+            }
         })();
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">

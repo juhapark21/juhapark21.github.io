@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No link yet :(</title>
-    <style> 
+    <style>
         body {
             text-align: center;
             padding: 60px 20px;
@@ -27,12 +27,12 @@
 
         .duck-image {
             max-width: 100%;
-            height: auto; 
+            height: auto;
             margin-bottom: 10px;
         }
 
         .duck-caption {
-            font-size: 0.85em; 
+            font-size: 0.85em;
             color: var(--text-secondary);
             margin-bottom: 30px;
         }
@@ -47,13 +47,16 @@
         .back-link:hover {
             color: var(--accent-hover);
         }
-        
     </style>
     <script>
         (function () {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            const savedContrast = localStorage.getItem('contrast');
+            if (savedContrast === 'high') {
+                document.documentElement.setAttribute('data-contrast', 'high');
             }
         })();
     </script>
@@ -68,7 +71,8 @@
 <body>
     <h3>This project doesn't have a link yet, sorry!</h3>
     <p>here is a duck of consolation</p>
-    <img class="duck-image" src="https://www.allaboutbirds.org/guide/assets/photo/60018911-1280px.jpg" alt="Male American Black Duck floating in water">
+    <img class="duck-image" src="https://www.allaboutbirds.org/guide/assets/photo/60018911-1280px.jpg"
+        alt="Male American Black Duck floating in water">
     <div class="duck-caption">Image credit: Evan Lipton / Macaulay Library</div>
     <a href="projects.html" class="back-link">← Back to projects</a>
     <script src="script.js"></script>
