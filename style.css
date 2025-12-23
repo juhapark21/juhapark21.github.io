@@ -223,12 +223,16 @@ nav a.active::after {
     content: '## ';
     color: var(--text-secondary);
     font-weight: normal;
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 .markdown h3::before {
     content: '### ';
     color: var(--text-secondary);
     font-weight: normal;
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 .markdown ul li::before {
@@ -236,37 +240,51 @@ nav a.active::after {
     color: var(--text-secondary);
     position: absolute;
     left: 0;
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 .markdown ul {
     list-style: none;
     margin-left: 0;
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 .markdown ul li {
     padding-left: 20px;
     position: relative;
     margin-bottom: 8px;
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 .markdown em::before {
-    content: '*';
+    content: '_';
     color: var(--text-secondary);
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 .markdown em::after {
-    content: '*';
+    content: '_';
     color: var(--text-secondary);
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 .markdown strong::before {
     content: '**';
     color: var(--text-secondary);
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 .markdown strong::after {
     content: '**';
     color: var(--text-secondary);
+    font-family: "Inconsolata", "Courier New", monospace;
+    font-size: 1.05em;
 }
 
 /* Section Headers */
@@ -457,11 +475,13 @@ sup {
     float: right;
     clear: right;
     margin-right: -220px;
+    margin-left: -5px;
     width: 200px;
     font-size: 0.85em;
     line-height: 1.5;
     color: var(--text-secondary);
-    padding-left: 15px;
+    padding: 5px;
+    padding-left: 10px;
     border-left: 2px solid var(--border);
     transition: background-color 0.3s;
     scroll-margin-top: 200px;
@@ -469,8 +489,7 @@ sup {
 
 .sidenote:target {
     background-color: rgba(206, 121, 107, 0.3);
-    padding: 5px;
-    margin-left: -5px;
+    border-left-color: var(--text-secondary);  
     animation: highlight-fade 2s forwards;
 }
 
@@ -481,28 +500,34 @@ sup {
 @keyframes highlight-fade {
     0% {
         background-color: rgba(206, 121, 107, 0.3);
+        border-left-color: var(--text-secondary);  
     }
 
     70% {
         background-color: rgba(206, 121, 107, 0.3);
+        border-left-color: var(--text-secondary);  
     }
 
     100% {
         background-color: transparent;
+        border-left-color: var(--border);  
     }
 }
 
 @keyframes highlight-fade-dark {
     0% {
         background-color: rgba(255, 255, 170, 0.3);
+        border-left-color: var(--text-secondary);  
     }
 
     70% {
         background-color: rgba(255, 255, 170, 0.3);
+        border-left-color: var(--text-secondary);  
     }
 
     100% {
         background-color: transparent;
+        border-left-color: var(--border);  
     }
 }
 
