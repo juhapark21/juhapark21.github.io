@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Juha Park</title>
-    <link>https://juhapark21.github.io/link>
+    <link>https://juhapark21.github.io/feed.xml</link>
     <description>I make stuff, sometimes</description>
     <language>en-us</language>
     <atom:link href="https://juhapark21.com/feed.xml" rel="self" type="application/rss+xml" />
