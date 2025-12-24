@@ -549,13 +549,13 @@ sup {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     nav {
         flex-wrap: wrap;
         gap: 15px;
         width: 100%;
     }
-    
+
     .theme-controls {
         margin-top: 10px;
     }
@@ -607,8 +607,10 @@ button:focus,
     --bg-secondary: #f0f0f0;
     --text-primary: #000000;
     --text-secondary: #000000;
-    --accent: #0000ee;  /* Classic blue link */
-    --accent-hover: #551a8b;  /* Visited purple */
+    --accent: #0000ee;
+    /* Classic blue link */
+    --accent-hover: #551a8b;
+    /* Visited purple */
     --border: #000000;
 }
 
@@ -617,13 +619,15 @@ button:focus,
     --bg-secondary: #1a1a1a;
     --text-primary: #ffffff;
     --text-secondary: #ffffff;
-    --accent: #00ffff;  /* Bright cyan */
-    --accent-hover: #ffff00;  /* Yellow */
+    --accent: #00ffff;
+    /* Bright cyan */
+    --accent-hover: #ffff00;
+    /* Yellow */
     --border: #ffffff;
 }
 
 .contrast-toggle {
-    background: none; 
+    background: none;
     border: 2px solid var(--border);
     color: var(--text-primary);
     padding: 8px;
@@ -645,8 +649,8 @@ button:focus,
 }
 
 .contrast-icon {
-    width: 20px; 
-    height: 20px; 
+    width: 20px;
+    height: 20px;
 }
 
 [data-contrast="high"] .contrast-toggle {
@@ -666,7 +670,7 @@ button:focus,
         --accent-hover: #551a8b;
         --border: #000000;
     }
-    
+
     [data-theme="dark"] {
         --bg-primary: #000000;
         --bg-secondary: #1a1a1a;
