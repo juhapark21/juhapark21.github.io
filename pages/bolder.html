@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hi kylie</title>
+</head>
+<body>
+<textarea id="in" rows="10" cols="60"></textarea>
+<br>
+<button id="copy">Copy</button>
+<div id="out"></div>
+<script>
+const inp = document.getElementById('in');
+const out = document.getElementById('out');
+let html = '';
+
+function esc(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+const isLetter = c => /[\p{L}\p{N}]/u.test(c);
+
+function convertWord(tok) {
+  const chars = Array.from(tok);
+  let first = -1, last = -1;
+  for (let i = 0; i < chars.length; i++) {
+    if (isLetter(chars[i])) { if (first < 0) first = i; last = i; }
+  }
+  if (first < 0) return esc(tok);
+  return chars.map((c, i) => (i === first || i === last) ? '<b>' + esc(c) + '</b>' : esc(c)).join('');
+}
+
+function convertSpace(tok) {
+  return tok.replace(/\r\n|\r/g, '\n').replace(/  /g, ' &nbsp;').replace(/\n/g, '<br>');
+}
+
+function convert(t) {
+  return t.split(/(\s+)/).map(tok => /^\s*$/.test(tok) ? convertSpace(tok) : convertWord(tok)).join('');
+}
+
+inp.addEventListener('input', () => {
+  html = convert(inp.value);
+  out.innerHTML = html;
+});
+
+document.getElementById('copy').addEventListener('click', () => {
+  const h = '<meta charset="utf-8"><span>' + html + '</span>';
+  const p = inp.value;
+  const handler = e => {
+    e.clipboardData.setData('text/html', h);
+    e.clipboardData.setData('text/plain', p);
+    e.preventDefault();
+  };
+  document.addEventListener('copy', handler);
+  document.execCommand('copy');
+  document.removeEventListener('copy', handler);
+});
+</script>
+</body>
+</html>
